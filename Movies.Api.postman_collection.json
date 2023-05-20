@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "206baebe-9be2-4fdb-b9de-f79338aed262",
+		"name": "Movies.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8363517"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1.0/movieLists",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"movieLists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1.0/movieLists/0475ed3e-c380-463b-974b-868a9987719d",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"movieLists",
+						"0475ed3e-c380-463b-974b-868a9987719d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"First List\",\r\n    \"Description\":\"My List\",\r\n    \"movies\":[\r\n        {\r\n            \"Title\": \"Movie 1\",\r\n            \"Description\": \"My first movie\",\r\n            \"RealeaseYear\": 2023\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1.0/movieLists",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"movieLists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ID\": \"0475ed3e-c380-463b-974b-868a9987719d\",\r\n    \"Title\": \"First List2\",\r\n    \"Description\": \"My List\",\r\n    \"movies\": [\r\n        {\r\n            \"Title\": \"Movie 12\",\r\n            \"Description\": \"My first movie\",\r\n            \"RealeaseYear\": 2023\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1.0/movieLists",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"movieLists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1.0/movieLists/6630d485-c654-4a7e-aed7-0682164574b6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"movieLists",
+						"6630d485-c654-4a7e-aed7-0682164574b6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:54199"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwZmYzNDRiYi1kZTYzLTRjZmQtYTFmZC1jYjVjZDk1Y2JhZmIiLCJuYW1lIjoiVGVzdDIiLCJ1c2VySUQiOiJiOWE2Y2JjOS0xZGU5LTRhZDYtYTY2YS1lYzMyYmJkODY5MGQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwiZXhwIjoxNjg0NjU3MzQyLCJpc3MiOiJKd3RJc3N1ZXIiLCJhdWQiOiJKd3RBdWRpZW5jZSJ9.WIsC5EguCCPZYm5Ps4W9DEDFiP-tH3ya_P1wCcSRaiY"
+		}
+	]
+}
