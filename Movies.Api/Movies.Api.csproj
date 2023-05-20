@@ -287,12 +287,16 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <None Include="Properties\PublishProfiles\registry.hub.docker.com_gyorgy.sneff%40gmail.com.pubxml" />
+    <None Include="Properties\PublishProfiles\registry.hub.docker.com_gyorgy.sneff%40gmail.com1.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="log4net.config" />
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

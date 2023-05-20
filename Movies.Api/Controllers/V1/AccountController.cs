@@ -27,7 +27,7 @@ namespace Movies.Api.Controllers.V1
         }
 
         [HttpPost]
-        [Route("login")]
+        [Route("")]
         public IHttpActionResult Login(AccountModel account)
         {
             var loggedInUser = _dbContext.SearchByName(Guid.Empty, account.UserName);

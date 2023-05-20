@@ -15,10 +15,7 @@ namespace Movies.Api
             GlobalContext.Properties["RootDirectory"] = new DirectoryInfo(HostingEnvironment.ApplicationPhysicalPath).FullName;
             GlobalContext.Properties["ServiceName"] = Globals.MoviesServiceName;
 
-            (GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ILoggerFactory)) as LoggerFactory).AddLog4Net(new Log4NetSettings()
-            {
-                //ConfigFile = ".\\..\\log4net.config"
-            });
+            (GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ILoggerFactory)) as LoggerFactory).AddLog4Net(new Log4NetSettings());
         }
     }
 }
