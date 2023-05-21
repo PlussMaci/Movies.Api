@@ -12,7 +12,7 @@ docker file creation
 docker build -f Dockerfile --force-rm -t moviesapi  --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=Movies.Api" .
 ```
 
-## Endpoints
+## Api Endpoints
 
 ### account
 Just a dummy endpoint to create a JWT token, api/v1.0/account
@@ -44,3 +44,8 @@ Post: api/v1.0/movieLists : creates a movielist object for the logged in user
 Put: api/v1.0/movieLists : updates a movilist in the backend will be checked the loggedin user and the creator are the same
 Delete: api/v1.0/movieLists/{someGuid} : deletes a movielist, only admin user can delete lists
 ```
+## UI
+Simple one page UI added, no session handling, so user should logged in all the time the page is reloaded.
+in the background the api endpoint are called
+First time you load the page GetAll endpoint is called, if you want search then you need to leave the searchbox or press enter
+There is no right check in the UI, error handling is only an alert
