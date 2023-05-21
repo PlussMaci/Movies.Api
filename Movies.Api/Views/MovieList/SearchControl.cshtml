@@ -1,0 +1,10 @@
+﻿@model Movies.Api.Models.SearchModel
+    
+<div class="searchControl">
+    <div>
+        @Html.LabelFor(x => x.ListName)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.ListName, new { @class = "searcTextBox" })
+    </div>
+</div>

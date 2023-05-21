@@ -1,0 +1,125 @@
+﻿div.moviApiContainer {
+    position: absolute;
+    top: 40px;
+    left: 140px;
+    right: 140px;
+    bottom: 40px;
+    border-right: 1px solid #a6a6a6;
+    border-left: 1px solid #a6a6a6;
+}
+
+    div.moviApiContainer div.authBox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 500px;
+        height: 40px;
+    }
+
+    div.moviApiContainer div.searchBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 40px;
+    }
+
+    div.moviApiContainer div.movieListBox {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+    }
+
+        div.moviApiContainer div.movieListBox div.movieListRow,
+        div.moviApiContainer div.movieListBox div.movieContainerRow,
+        div.moviApiContainer div.movieListBox div.movieContainerRowHeader,
+        div.moviApiContainer div.movieListBox div.movieListRowHeader {
+            position: relative;
+            display: block;
+            height: 25px;
+            width: 100%;
+        }
+
+            div.moviApiContainer div.movieListBox div.movieContainerRowHeader div,
+            div .moviApiContainer div.movieListBox div.movieListRowHeader div {
+                font-weight: bold;
+            }
+
+            div.moviApiContainer div.movieListBox div.movieListRow.evenRow {
+                background-color: #CCC;
+            }
+
+            div.moviApiContainer div.movieListBox div.movieListRow:hover {
+                background-color: chartreuse;
+                transform: translateY(-0.25em);
+                box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+                cursor: pointer;
+            }
+
+            div.moviApiContainer div.movieListBox div.movieListRow .movieListRowTitle,
+            div.moviApiContainer div.movieListBox div.movieListRowHeader .movieListRowTitle {
+                position: absolute;
+                top: 0;
+                left: 10px;
+                width: 200px;
+                bottom: 0;
+                height: 25px;
+            }
+
+            div.moviApiContainer div.movieListBox div.movieListRow .movieListRowDesc,
+            div.moviApiContainer div.movieListBox div.movieListRowHeader .movieListRowDesc {
+                position: absolute;
+                top: 0;
+                left: 220px;
+                right: 50px;
+                bottom: 0;
+                height: 25px;
+            }
+
+            div.moviApiContainer div.movieListBox div.movieListRow .movieListRowAction,
+            div.moviApiContainer div.movieListBox div.movieListRowHeader .movieListRowAction {
+                position: absolute;
+                top: 0;
+                width: 80px;
+                right: 10px;
+                bottom: 0;
+                height: 25px;
+            }
+
+div.loginControl,
+div.searchControl {
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+    div.loginControl div,
+    div .searchControl div {
+        display: inline-block;
+    }
+
+        div.searchControl div .searcTextBox {
+            width: 200px;
+        }
+
+.movieContainer {
+    position: absolute;
+    top: 25px;
+    left: 210px;
+    right: 10px;
+}
+
+.loggedInContainer {
+    position: absolute;
+    right: 10px;
+}
+
+.movieListRowAction > div {
+    display: inline;
+}
+
+.movieListRowAction > div > img {
+    height: 20px;
+}

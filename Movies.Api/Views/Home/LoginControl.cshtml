@@ -1,0 +1,18 @@
+﻿@model Movies.Api.Models.AccountModel
+
+<div class="loginControl">
+    <div class="textBoxContainer">
+        <div>
+            @Html.TextBoxFor(x => x.UserName, new { @placeholder = "User named" })
+        </div>
+        <div>
+            @Html.PasswordFor(x => x.Password, new { @placeholder = "Pasword" })
+        </div>
+        <div>
+            <button id="loginButton">=></button>
+        </div>
+    </div>
+    <div class="loggedInContainer">
+        Logged in as: <span id="loggedInUserName" style="font-weight: bold;"></span>
+    </div>
+</div>

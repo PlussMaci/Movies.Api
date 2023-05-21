@@ -1,0 +1,51 @@
+﻿@model Movies.Api.Common.Entities.MovieList
+    
+<div class="editControl" title="Movielist">
+    <div>
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>@Html.TextBoxFor(m => m.Title)</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>@Html.TextAreaFor(m => m.Description)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Title</td>
+                                <td>Description</td>
+                                <td>Releaseyear</td>
+                                <td>Actions</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.TextBoxFor(m => m.movies[0].Title)
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.movies[0].Description)
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.movies[0].RealeaseYear)
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="@Url.Content("~/img/add.png")" />
+                                    </div>
+                                    <div>
+                                        <img src="@Url.Content("~/img/del.png")" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
