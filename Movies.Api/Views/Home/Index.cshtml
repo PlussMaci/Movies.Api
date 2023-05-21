@@ -1,1 +1,38 @@
-﻿Started...
+﻿<div class="moviApiContainer">
+    <div class="authBox">
+        @{ Html.RenderAction("LoginControl", "Home"); }
+    </div>
+    <div class="searchBox">
+        @{ Html.RenderAction("SearchControl", "MovieList"); }
+    </div>
+    <div class="movieListBox">
+        <div class="movieListRowHeader">
+            <div class="movieListRowTitle">
+                Title
+            </div>
+            <div class="movieListRowDesc">
+                Description
+            </div>
+            <div class="movieListRowAction">
+                <div>
+                    <img src="@Url.Content("~/img/add.png")" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="" style="display: none;">
+        @{ Html.RenderAction("EditControl", "MovieList"); }
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        window.moviesApiClient.getAllMovieList();
+        $('#ListName').on('change', function () {
+            window.moviesApiClient.searchMovieList();
+        });
+        $('#loginButton').on('click', function () {
+            window.moviesApiClient.login();
+        });
+    </script>
+}

@@ -87,7 +87,7 @@ namespace Movies.Api.Infrastructure.Persistence
 
         public IDbResult<IEnumerable<MovieList>> SearchByName(Guid CurrentUserID, string name)
         {
-            return new DbResult<IEnumerable<MovieList>>(_collection.Values.Where(x => x.Title.ToLowerInvariant().Contains(name.ToUpperInvariant())));
+            return new DbResult<IEnumerable<MovieList>>(_collection.Values.Where(x => x.Title.ToLowerInvariant().Contains(name.ToLowerInvariant())));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using Movies.Api.Models;
+using System.Web.Mvc;
 
 namespace Movies.Api.Controllers
 {
@@ -7,6 +8,11 @@ namespace Movies.Api.Controllers
         public ActionResult Index()
         {
            return View();
+        }
+
+        public ActionResult LoginControl()
+        {
+            return PartialView(new AccountModel());
         }
     }
 }
