@@ -15,7 +15,7 @@
     @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript">
         window.moviesApiClient.baseUrl = '@Url.Content("~/")';
-        window.moviesApiClient.setLoggedId();
+        moviesUI.setLoggedId();
     </script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

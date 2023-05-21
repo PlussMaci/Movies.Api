@@ -9,8 +9,10 @@ namespace Movies.Api
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui-{version}.js",
                         "~/Scripts/Custom/BaseClass.js",
-                        "~/Scripts/Custom/movies.api.client.js"));
+                        "~/Scripts/Custom/movies.api.client.js",
+                        "~/Scripts/Custom/moviesUI.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,7 +27,8 @@ namespace Movies.Api
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/Custom/site.css"));
+                      "~/Content/Custom/site.css",
+                      "~/Content/themes/base/jquery-ui.css"));
         }
     }
 }

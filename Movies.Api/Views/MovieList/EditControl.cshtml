@@ -1,51 +1,58 @@
 ﻿@model Movies.Api.Common.Entities.MovieList
     
-<div class="editControl" title="Movielist">
-    <div>
-        <table>
-            <tr>
-                <td>Title</td>
-                <td>@Html.TextBoxFor(m => m.Title)</td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>@Html.TextAreaFor(m => m.Description)</td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Title</td>
-                                <td>Description</td>
-                                <td>Releaseyear</td>
-                                <td>Actions</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    @Html.TextBoxFor(m => m.movies[0].Title)
-                                </td>
-                                <td>
-                                    @Html.TextBoxFor(m => m.movies[0].Description)
-                                </td>
-                                <td>
-                                    @Html.TextBoxFor(m => m.movies[0].RealeaseYear)
-                                </td>
-                                <td>
-                                    <div>
-                                        <img src="@Url.Content("~/img/add.png")" />
-                                    </div>
-                                    <div>
-                                        <img src="@Url.Content("~/img/del.png")" />
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </table>
-    </div>
+<div class="editControl">
+    <form>
+        <div>
+            <table>
+                <tr>
+                    <td>Title</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Title)
+                        @Html.HiddenFor(m => m.ID)
+                        @Html.HiddenFor(m => m.UserID)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>@Html.TextAreaFor(m => m.Description)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table cellpadding="10" id="movieTable" >
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Releaseyear</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td valign="top">
+                                        @Html.TextBoxFor(m => m.movies[0].Title)
+                                        @Html.HiddenFor(m => m.movies[0].ID)
+                                    </td>
+                                    <td valign="top">
+                                        @Html.TextAreaFor(m => m.movies[0].Description)
+                                    </td>
+                                    <td valign="top">
+                                        @Html.TextBoxFor(m => m.movies[0].RealeaseYear, new { @style = "width: 50px" })
+                                    </td>
+                                    <td valign="top">
+                                        <div class="addButton" style="display: inline;" onclick="moviesUI.addMovie(this);">
+                                            <img src="@Url.Content("~/img/add.png")" style="height: 20px" />
+                                        </div>
+                                        <div class="deleteButton" style="display: inline;" onclick="moviesUI.deleteMovie(this);">
+                                            <img src="@Url.Content("~/img/del.png")" style="height: 20px" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
 </div>

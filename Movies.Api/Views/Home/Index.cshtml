@@ -14,19 +14,20 @@
                 Description
             </div>
             <div class="movieListRowAction">
-                <div>
-                    <img src="@Url.Content("~/img/add.png")" />
+                <div onclick="moviesUI.showCreateMovieList();">
+                    <img src="@Url.Content("~/img/add.png")" style="cursor: pointer;" />
                 </div>
             </div>
         </div>
     </div>
-    <div id="" style="display: none;">
+    <div id="editControlContainer" title="Movielist">
         @{ Html.RenderAction("EditControl", "MovieList"); }
     </div>
 </div>
 
 @section Scripts {
     <script type="text/javascript">
+        moviesUI.initDialog();
         window.moviesApiClient.getAllMovieList();
         $('#ListName').on('change', function () {
             window.moviesApiClient.searchMovieList();
